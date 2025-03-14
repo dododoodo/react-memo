@@ -35,7 +35,12 @@
             // **오브젝트 객체로 만들어줌->저장시키려고
 
             // axios post를 이용하여 서버에 전송시키기
-            axios.post(`${process.env.REACT_APP_APIURL}/test/memo`, entries)
+            axios({
+                url:`${process.env.REACT_APP_APIURL}/test/memo`,
+                method:"post",
+                data:JSON.stringify(entries),
+                headers:{"Content-Type":"application/json"}
+            })
             .then(res=>{
                 // **중요
                 setData([...data, entries]);
