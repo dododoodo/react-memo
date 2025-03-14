@@ -1,16 +1,9 @@
-    import React, { useEffect, useState } from 'react'
+    import React, { useState } from 'react'
     import axios from 'axios'
 
     function MemoInsert({data,setData}) {
         const [state,setState] = useState(false);
 
-        // useEffect로 기존 데이터 불러오기
-        useEffect(() => {
-            axios.get(`${process.env.REACT_APP_APIURL}/test/memo`)
-            .then(res => {
-                setData(res.data);
-            })
-        }, [setData]);
 
         // 입력한 내용 서버에 전송
         function insert(e){
