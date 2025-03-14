@@ -6,7 +6,7 @@
 
         // useEffect로 기존 데이터 불러오기
         useEffect(() => {
-            axios.get('http://localhost:3000/test/memo')
+            axios.get(`${process.env.REACT_APP_APIURL}/test/memo`)
             .then(res => {
                 setData(res.data);
             })
@@ -42,7 +42,7 @@
             // **오브젝트 객체로 만들어줌->저장시키려고
 
             // axios post를 이용하여 서버에 전송시키기
-            axios.post('http://localhost:3000/test/memo', entries)
+            axios.post(`${process.env.REACT_APP_APIURL}/test/memo`, entries)
             .then(res=>{
                 // **중요
                 setData([...data, entries]);
