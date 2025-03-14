@@ -1,0 +1,48 @@
+header {
+    background-color: black;
+    text-align: center;
+
+    a {
+        color: white;
+        padding: 20px 30px;
+        display: inline-block;
+
+        &.active {
+            color: yellow;
+        }
+    }
+}
+
+main {
+    width: 80%;
+    margin: 60px auto;
+}
+
+.insert {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    
+
+    textarea,
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+        box-sizing: border-box;
+    }
+
+    textarea {height:200px}
+}
+
+.list {
+    width: 500px;
+    background-color: skyblue;
+    display: block;
+    div {
+        padding: 20px;
+        
+    }
+
+}

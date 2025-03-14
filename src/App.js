@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import './Style.scss';
+import Memo from './pages/Memo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header>
+          <NavLink to="/memo">Go to Memo</NavLink>
+        </header>
+        <main>
+          <Routes> 
+            <Route path="/memo" element={<Memo />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
